@@ -31,7 +31,7 @@ obiektów wysy³aj±cych, jak i (szczególnie) nowych wyj¶æ.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-perl Makefile.PL < /dev/null
+%{__perl} Makefile.PL < /dev/null
 %{__make}
 %{!?_without_tests:%{__make} test}
 
