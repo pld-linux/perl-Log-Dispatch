@@ -21,6 +21,9 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# optional
+%define		_noautoreq	'perl(Apache::Log)' 'perl(MIME::Lite)' 'perl(Mail::Send)' 'perl(Mail::Sender)' 'perl(Mail::Sendmail)'
+
 %description
 Log::Dispatch is a suite of OO modules for logging messages to
 multiple outputs, each of which can have a minimum and maximum log
