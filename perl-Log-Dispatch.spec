@@ -1,19 +1,19 @@
 #
 # Conditional build:
-# _without_tests - do not perform "./Build test"
-#
+%bcond_without	tests	# do not perform "./Build test"
+
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Log
 %define	pnam	Dispatch
 Summary:	Log::Dispatch module - dispatches messages to multiple Log::Dispatch::* objects
 Summary(pl):	Modu³ Log::Dispatch - wysy³aj±cy komunikaty do wielu obiektów Log::Dispatch::*
 Name:		perl-%{pdir}-%{pnam}
-Version:	2.07
+Version:	2.08
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	d4c33ca2f36b5ec34e671d65aa0366d3
+# Source0-md5:	a8ca65b5e73c695d37a99967822f983c
 BuildRequires:	perl-Module-Build >= 0.20
 BuildRequires:	perl-Params-Validate >= 0.15
 BuildRequires:	perl-devel >= 5.8
@@ -46,7 +46,7 @@ obiektów wysy³aj±cych, jak i (szczególnie) nowych wyj¶æ.
 	destdir=$RPM_BUILD_ROOT
 ./Build
 
-%{!?_without_tests:./Build test}
+%{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
