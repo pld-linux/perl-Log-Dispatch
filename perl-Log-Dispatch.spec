@@ -9,12 +9,12 @@ Summary:	Log::Dispatch module - dispatches messages to multiple Log::Dispatch::*
 Summary(pl):	Modu³ Log::Dispatch - wysy³aj±cy komunikaty do wielu obiektów Log::Dispatch::*
 Name:		perl-%{pdir}-%{pnam}
 Version:	2.06
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	1a7d6f11ceabca75587efa4c2251a134
-BuildRequires:	perl-Module-Build
+BuildRequires:	perl-Module-Build >= 0.20
 BuildRequires:	perl-Params-Validate >= 0.15
 BuildRequires:	perl-devel >= 5.8
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -42,28 +42,15 @@ obiektów wysy³aj±cych, jak i (szczególnie) nowych wyj¶æ.
 
 %build
 %{__perl} Build.PL \
-	config="sitelib=%{perl_vendorlib} sitearch=%{perl_vendorarch}"
+	installdirs=vendor \
+	destdir=$RPM_BUILD_ROOT
 ./Build
-
-# man pages not yet supported by Module::Build :/
-pod2man lib/Log/Dispatch.pm Log::Dispatch.3pm
-for f in lib/Log/Dispatch/*.pm ; do
-	pod2man $f Log::Dispatch::`basename $f .pm`.3pm
-done
-for f in lib/Log/Dispatch/Email/*.pm ; do
-	pod2man $f Log::Dispatch::Email::`basename $f .pm`.3pm
-done
 
 %{!?_without_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-./Build install \
-	destdir=$RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT%{_mandir}/man3
-install *.3pm $RPM_BUILD_ROOT%{_mandir}/man3
+./Build install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
