@@ -5,8 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Log
 %define	pnam	Dispatch
-Summary:	Log::Dispatch module - dispatches messages to multiple Log::Dispatch::* objects
-Summary(pl):	Modu³ Log::Dispatch - wysy³aj±cy komunikaty do wielu obiektów Log::Dispatch::*
+Summary:	Log::Dispatch Perl module - dispatches messages to multiple Log::Dispatch::* objects
+Summary(pl):	Modu³ Perla Log::Dispatch - wysy³anie komunikatów do wielu obiektów Log::Dispatch::*
 Name:		perl-%{pdir}-%{pnam}
 Version:	2.10
 Release:	1
