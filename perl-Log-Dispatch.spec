@@ -10,7 +10,7 @@ Summary(pl):	Modu³ Perla Log::Dispatch - wysy³anie komunikatów do wielu obiektów
 Name:		perl-%{pdir}-%{pnam}
 Version:	2.10
 Release:	1
-License:	GPL/Artistic
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	2761fc3db107273325e1f1228e7ee7ac
