@@ -1,10 +1,14 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Log
 %define	pnam	Dispatch
 Summary:	Log::Dispatch module - dispatches messages to multiple Log::Dispatch::* objects
-Summary(pl):	Modu³ Log::Dispatch - wysy³aj±cy komunikaty do wielu obiektów Log::Distatch::*
-Name:		perl-%{pdir}-%{pnam}
-Version:	2.03
+Summary(pl):	Modu³ Log::Dispatch - wysy³aj±cy komunikaty do wielu obiektów Log::Dispatch::*
+Name:		perl-Log-Dispatch
+Version:	2.04
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
@@ -15,10 +19,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Log::Dispatch is a suite of OO modules for logging messages to multiple
-outputs, each of which can have a minimum and maximum log level.  It is
-designed to be easily subclassed, both for creating a new dispatcher
-object and particularly for creating new outputs.
+Log::Dispatch is a suite of OO modules for logging messages to
+multiple outputs, each of which can have a minimum and maximum log
+level. It is designed to be easily subclassed, both for creating a
+new dispatcher object and particularly for creating new outputs.
 
 %description -l pl
 Log::Dispatch to zestaw obiektowo zorientowanych modu³ów do logowania
@@ -33,6 +37,7 @@ obiektów wysy³aj±cych, jak i (szczególnie) nowych wyj¶æ.
 %build
 %{__perl} Makefile.PL < /dev/null
 %{__make}
+
 %{!?_without_tests:%{__make} test}
 
 %install
