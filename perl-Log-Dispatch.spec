@@ -5,12 +5,12 @@ Summary:	Log::Dispatch module - dispatches messages to multiple Log::Dispatch::*
 Summary(pl):	Modu³ Log::Dispatch - wysy³aj±cy komunikaty do wielu obiektów Log::Distatch::*
 Name:		perl-%{pdir}-%{pnam}
 Version:	2.02
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,7 +31,8 @@ obiektów wysy³aj±cych, jak i (szczególnie) nowych wyj¶æ.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL < /dev/null
+%{__perl} Makefile.PL < /dev/null \
+	INSTALLDIRS=vendor 
 %{__make}
 %{!?_without_tests:%{__make} test}
 
@@ -45,6 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{perl_sitelib}/%{pdir}/*.pm
-%{perl_sitelib}/%{pdir}/%{pnam}
+%{perl_vendorlib}/%{pdir}/*.pm
+%{perl_vendorlib}/%{pdir}/%{pnam}
 %{_mandir}/man3/*
