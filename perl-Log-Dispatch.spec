@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "./Build test"
 
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Log
-%define	pnam	Dispatch
+%define		pdir	Log
+%define		pnam	Dispatch
 Summary:	Log::Dispatch Perl module - dispatches messages to multiple Log::Dispatch::* objects
 Summary(pl):	Modu³ Perla Log::Dispatch - wysy³anie komunikatów do wielu obiektów Log::Dispatch::*
 Name:		perl-Log-Dispatch
