@@ -1,11 +1,11 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Log
 %define	pnam	Dispatch
-Summary:	Log::Dispatch -- Dispatches messages to multiple Log::Dispatch::* objects
-#Summary(pl):	
+Summary:	Log::Dispatch module - dispatches messages to multiple Log::Dispatch::* objects
+Summary(pl):	Modu³ Log::Dispatch - wysy³aj±cy komunikaty do wielu obiektów Log::Distatch::*
 Name:		perl-%{pdir}-%{pnam}
 Version:	2.01
-Release:	1
+Release:	2
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -20,8 +20,12 @@ outputs, each of which can have a minimum and maximum log level.  It is
 designed to be easily subclassed, both for creating a new dispatcher
 object and particularly for creating new outputs.
 
-# %description -l pl
-# TODO
+%description -l pl
+Log::Dispatch to zestaw obiektowo zorientowanych modu³ów do logowania
+komunikatów na wiele wyj¶æ, z których ka¿de mo¿e mieæ podany minimalny
+i maksymalny poziom logowania. Pakiet ten zosta³ zaprojektowany tak,
+by ³atwo mo¿na by³o stworzyæ klasy potomne, w celu tworzenia nowych
+obiektów wysy³aj±cych, jak i (szczególnie) nowych wyj¶æ.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
