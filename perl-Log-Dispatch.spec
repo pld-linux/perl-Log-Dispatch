@@ -9,7 +9,7 @@ Summary:	Log::Dispatch Perl module - dispatches messages to multiple Log::Dispat
 Summary(pl):	Modu³ Perla Log::Dispatch - wysy³anie komunikatów do wielu obiektów Log::Dispatch::*
 Name:		perl-%{pdir}-%{pnam}
 Version:	2.10
-Release:	1
+Release:	2
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
