@@ -7,7 +7,7 @@
 %define	pnam	Dispatch
 Summary:	Log::Dispatch Perl module - dispatches messages to multiple Log::Dispatch::* objects
 Summary(pl):	Modu³ Perla Log::Dispatch - wysy³anie komunikatów do wielu obiektów Log::Dispatch::*
-Name:		perl-%{pdir}-%{pnam}
+Name:		perl-Log-Dispatch
 Version:	2.10
 Release:	2
 License:	GPL v1+ or Artistic
