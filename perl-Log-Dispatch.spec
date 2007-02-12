@@ -6,7 +6,7 @@
 %define		pdir	Log
 %define		pnam	Dispatch
 Summary:	Log::Dispatch Perl module - dispatches messages to multiple Log::Dispatch::* objects
-Summary(pl):	Modu≥ Perla Log::Dispatch - wysy≥anie komunikatÛw do wielu obiektÛw Log::Dispatch::*
+Summary(pl.UTF-8):   Modu≈Ç Perla Log::Dispatch - wysy≈Çanie komunikat√≥w do wielu obiekt√≥w Log::Dispatch::*
 Name:		perl-Log-Dispatch
 Version:	2.10
 Release:	2
@@ -30,12 +30,12 @@ multiple outputs, each of which can have a minimum and maximum log
 level. It is designed to be easily subclassed, both for creating a new
 dispatcher object and particularly for creating new outputs.
 
-%description -l pl
-Log::Dispatch to zestaw obiektowo zorientowanych modu≥Ûw do logowania
-komunikatÛw na wiele wyj∂Ê, z ktÛrych kaøde moøe mieÊ podany minimalny
-i maksymalny poziom logowania. Pakiet ten zosta≥ zaprojektowany tak,
-by ≥atwo moøna by≥o stworzyÊ klasy potomne, w celu tworzenia nowych
-obiektÛw wysy≥aj±cych, jak i (szczegÛlnie) nowych wyj∂Ê.
+%description -l pl.UTF-8
+Log::Dispatch to zestaw obiektowo zorientowanych modu≈Ç√≥w do logowania
+komunikat√≥w na wiele wyj≈õƒá, z kt√≥rych ka≈ºde mo≈ºe mieƒá podany minimalny
+i maksymalny poziom logowania. Pakiet ten zosta≈Ç zaprojektowany tak,
+by ≈Çatwo mo≈ºna by≈Ço stworzyƒá klasy potomne, w celu tworzenia nowych
+obiekt√≥w wysy≈ÇajƒÖcych, jak i (szczeg√≥lnie) nowych wyj≈õƒá.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
