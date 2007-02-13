@@ -6,7 +6,7 @@
 %define		pdir	Log
 %define		pnam	Dispatch
 Summary:	Log::Dispatch Perl module - dispatches messages to multiple Log::Dispatch::* objects
-Summary(pl.UTF-8):   Moduł Perla Log::Dispatch - wysyłanie komunikatów do wielu obiektów Log::Dispatch::*
+Summary(pl.UTF-8):	Moduł Perla Log::Dispatch - wysyłanie komunikatów do wielu obiektów Log::Dispatch::*
 Name:		perl-Log-Dispatch
 Version:	2.10
 Release:	2
