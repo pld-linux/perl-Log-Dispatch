@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "./Build test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Log
 %define		pnam	Dispatch
@@ -12,8 +12,9 @@ Version:	2.20
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Log/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	cef8b522b7b243a4696e33b6de22836b
+URL:		http://search.cpan.org/dist/Log-Dispatch/
 BuildRequires:	perl-Module-Build >= 0.20
 BuildRequires:	perl-Params-Validate >= 0.15
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -58,6 +59,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorlib}/%{pdir}/*.pm
-%{perl_vendorlib}/%{pdir}/%{pnam}
+%{perl_vendorlib}/Log/*.pm
+%{perl_vendorlib}/Log/Dispatch
 %{_mandir}/man3/*
