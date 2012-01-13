@@ -8,12 +8,12 @@
 Summary:	Log::Dispatch Perl module - dispatches messages to multiple Log::Dispatch::* objects
 Summary(pl.UTF-8):	Moduł Perla Log::Dispatch - wysyłanie komunikatów do wielu obiektów Log::Dispatch::*
 Name:		perl-Log-Dispatch
-Version:	2.26
+Version:	2.29
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Log/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	d15559297f7c73a311ede78f97174d2a
+# Source0-md5:	781a4b5a9db2b617d2487dadecf65081
 URL:		http://search.cpan.org/dist/Log-Dispatch/
 BuildRequires:	perl-Module-Build >= 0.20
 BuildRequires:	perl-Params-Validate >= 0.15
@@ -42,16 +42,16 @@ obiektów wysyłających, jak i (szczególnie) nowych wyjść.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Build.PL \
+%{__perl} Makefile.PL \
 	installdirs=vendor \
 	destdir=$RPM_BUILD_ROOT
-./Build
+%{__make}
 
-%{?with_tests:./Build test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-./Build install
+%{__make} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
