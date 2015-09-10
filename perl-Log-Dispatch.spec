@@ -19,6 +19,11 @@ BuildRequires:	perl-Module-Build >= 0.20
 BuildRequires:	perl-Params-Validate >= 0.15
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{with tests}
+BuildRequires:	perl-Devel-GlobalDestruction
+BuildRequires:	perl-Test-Fatal
+BuildRequires:	perl-Test-Requires
+%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
