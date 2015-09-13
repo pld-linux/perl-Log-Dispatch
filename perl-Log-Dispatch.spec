@@ -8,27 +8,29 @@
 Summary:	Log::Dispatch Perl module - dispatches messages to multiple Log::Dispatch::* objects
 Summary(pl.UTF-8):	Moduł Perla Log::Dispatch - wysyłanie komunikatów do wielu obiektów Log::Dispatch::*
 Name:		perl-Log-Dispatch
-Version:	2.44
+Version:	2.50
 Release:	1
-License:	GPL v1+ or Artistic
+License:	Artistic v2.0
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Log/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a08ad454f77ee6fe0d98e32516b835f2
+# Source0-md5:	0f8e4bcbd440d531ecfb9cfc44b2114f
 URL:		http://search.cpan.org/dist/Log-Dispatch/
-BuildRequires:	perl-Module-Build >= 0.20
-BuildRequires:	perl-Params-Validate >= 0.15
+BuildRequires:	perl-Dist-CheckConflicts >= 0.02
+BuildRequires:	perl-Params-Validate >= 1.03
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Devel-GlobalDestruction
+BuildRequires:	perl-Sys-Syslog >= 0.28
 BuildRequires:	perl-Test-Fatal
 BuildRequires:	perl-Test-Requires
+BuildRequires:	perl-Test-Simple >= 0.96
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # optional
-%define		_noautoreq	'perl(Apache::Log)' 'perl(MIME::Lite)' 'perl(Mail::Send)' 'perl(Mail::Sender)' 'perl(Mail::Sendmail)'
+%define		_noautoreq_perl	MIME::Lite Mail::Send Mail::Sender Mail::Sendmail
 
 %description
 Log::Dispatch is a suite of OO modules for logging messages to
@@ -41,22 +43,24 @@ Log::Dispatch to zestaw obiektowo zorientowanych modułów do logowania
 komunikatów na wiele wyjść, z których każde może mieć podany minimalny
 i maksymalny poziom logowania. Pakiet ten został zaprojektowany tak,
 by łatwo można było stworzyć klasy potomne, w celu tworzenia nowych
-obiektów wysyłających, jak i (szczególnie) nowych wyjść.
+obiektów dyspozytorów, jak i (w szczególności) nowych wyjść.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 %{__perl} Makefile.PL \
-	installdirs=vendor \
-	destdir=$RPM_BUILD_ROOT
+	INSTALLDIRS=vendor
+
 %{__make}
 
 %{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -64,6 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README.md
-%{perl_vendorlib}/Log/*.pm
+%{perl_vendorlib}/Log/Dispatch.pm
 %{perl_vendorlib}/Log/Dispatch
-%{_mandir}/man3/*
+%{_mandir}/man3/Log::Dispatch*.3pm*
