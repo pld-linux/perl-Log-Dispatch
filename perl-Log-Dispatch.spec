@@ -19,6 +19,7 @@ BuildRequires:	perl-Dist-CheckConflicts >= 0.02
 BuildRequires:	perl-Params-Validate >= 1.03
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.663
 %if %{with tests}
 BuildRequires:	perl-Devel-GlobalDestruction
 BuildRequires:	perl-Sys-Syslog >= 0.28
