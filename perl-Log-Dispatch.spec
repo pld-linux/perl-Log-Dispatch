@@ -8,12 +8,12 @@
 Summary:	Log::Dispatch Perl module - dispatches messages to multiple Log::Dispatch::* objects
 Summary(pl.UTF-8):	Moduł Perla Log::Dispatch - wysyłanie komunikatów do wielu obiektów Log::Dispatch::*
 Name:		perl-Log-Dispatch
-Version:	2.67
+Version:	2.68
 Release:	1
 License:	Artistic v2.0
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Log/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	d68e256e80ca4e1482b86abf6bcee552
+# Source0-md5:	c273198cd4ffee4bf51b398a45e785ba
 URL:		http://search.cpan.org/dist/Log-Dispatch/
 BuildRequires:	perl-Dist-CheckConflicts >= 0.02
 BuildRequires:	perl-Params-Validate >= 1.03
