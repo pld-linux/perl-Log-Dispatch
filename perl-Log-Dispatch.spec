@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "./Build test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Log
 %define		pnam	Dispatch
 Summary:	Log::Dispatch Perl module - dispatches messages to multiple Log::Dispatch::* objects
