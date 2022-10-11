@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "./Build test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	Log
 %define		pnam	Dispatch
@@ -13,17 +13,17 @@ License:	Artistic v2.0
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Log/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	3369ffd45dc098ef6c74622ceee7ad74
-URL:		http://search.cpan.org/dist/Log-Dispatch/
+URL:		https://metacpan.org/dist/Log-Dispatch
 BuildRequires:	perl-Dist-CheckConflicts >= 0.02
 BuildRequires:	perl-Params-Validate >= 1.03
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	rpmbuild(macros) >= 1.663
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl-Devel-GlobalDestruction
 BuildRequires:	perl-Sys-Syslog >= 0.28
 BuildRequires:	perl-Test-Fatal
-BuildRequires:  perl-Test-Needs
+BuildRequires:	perl-Test-Needs
 BuildRequires:	perl-Test-Requires
 BuildRequires:	perl-Test-Simple >= 0.96
 BuildRequires:	perl-Specio >= 0.32
